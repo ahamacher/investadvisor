@@ -1,4 +1,4 @@
-import RECEIVE_RISK from '../actions/riskActions'
+import { RECEIVE_RISK } from '../actions/riskActions'
 import Investment from "../util/investmentutil";
 
 const investmentReducer = (state = {}, action) => {

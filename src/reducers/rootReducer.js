@@ -7,4 +7,4 @@ const rootReducer = combineReducers({
   investment: investmentReducer
 })
 
-export default rootReducer
+export default rootReducer;

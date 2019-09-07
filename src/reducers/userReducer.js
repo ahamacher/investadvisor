@@ -1,4 +1,4 @@
-import RECEIVE_RISK from "../actions/riskActions";
+import { RECEIVE_RISK } from "../actions/riskActions";
 
 const userReducer = (state = {}, action) => {
   Object.freeze(state)

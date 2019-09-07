@@ -1,6 +1,13 @@
 // this is where backend calls would be placed if using an actual backend
 // these instead are the returned values for that theoretical API call
 const Investment = {
+  0: {
+    stock: 0,
+    bond: 0,
+    gold: 0,
+    cash: 0,
+    realEstate: 0
+  },
   1: {
     stock: 10,
     bond: 15,

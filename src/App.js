@@ -1,13 +1,12 @@
 import React from 'react';
+import { Provider } from "react-redux";
 import './App.css';
 import Main from "./components/main";
 
-function App() {
-  return (
-    <div className="App">
+const App = ({ store }) => (
+    <Provider store={ store }>
       <Main />
-    </div>
-  );
-}
+    </Provider>
+);
 
 export default App;

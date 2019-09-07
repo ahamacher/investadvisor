@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import configureStore from "./store/store";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let preloadedState = {
+  user: {
+    riskprofile: 0
+  }
+};
+let store = configureStore(preloadedState);
+
+ReactDOM.render(<App store={store} />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
