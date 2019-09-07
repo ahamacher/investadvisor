@@ -1,0 +1,12 @@
+{
+  "user": {
+    "riskprofile": 3
+  },
+  "investment": {
+    "stock": 25,
+    "bond": 15,
+    "gold": 27,
+    "cash": 14,
+    "realestate": 19
+  }
+}
