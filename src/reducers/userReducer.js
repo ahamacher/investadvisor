@@ -5,11 +5,11 @@ const userReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_RISK:
       return Object.assign({}, state, {
-        riskprofile: action.riskprofile
+        riskprofile: action.risk
       })
     default:
       return state
   }
 }
 
-export default userReducer
+export default userReducer;
