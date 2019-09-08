@@ -3,7 +3,8 @@ const AppContent = {
   profile: {
     title: "Already have a portfolio?",
     profileSub: "Amount in USD invested",
-    placeholder: "$0"
+    placeholder: "$0",
+    error: "Must enter a valid number"
   },
   risk: "Risk Profile Number",
   investments: {

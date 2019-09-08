@@ -1,16 +1,141 @@
-.App {
-  
+/* reset css */
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, 
+abbr, acronym, address, big, cite, code, del, dfn, 
+em, img, ins, kbd, q, s, samp, small, strike, strong, 
+sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, 
+li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td, article, aside, canvas, details, 
+embed,  figure, figcaption, footer, header, hgroup,  menu, nav, 
+output, ruby, section, summary, time, mark, audio, video {  
+   margin: 0;  
+   padding: 0;  
+   border: 0;  
+   font-size: 100%;  
+   font: inherit;
+   font-family: sans-serif;
+   vertical-align: baseline; 
 }
 
-.App-header {
+/* defaults */
+
+.text-main {
+  color: #424242;
+}
+
+.app-blue {
   background-color: #3597ff;
+}
+
+/* title bar */
+
+.App-header {
   min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(16px + 2vmin);
   font-weight: 600;
   color: white;
 }
 
+
+/* Styling for the risk factor component */
+  .slide-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .risk-title {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .risk-count {
+    font-weight: bolder;
+  }
+
+  /* Styling the slider */
+  input[type=range] {
+    height: 33px;
+    -webkit-appearance: none;
+    margin: 10px 0;
+    width: 60vw;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    background: #ACACAC;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    border: 1px solid #000000;
+    height: 25px;
+    width: 25px;
+    border-radius: 15px;
+    background: #03a9f4;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8.5px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ACACAC;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 10px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    background: #ACACAC;
+    border-radius: 5px;
+    border: 1px solid #000000;
+  }
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+    border: 1px solid #000000;
+    height: 25px;
+    width: 25px;
+    border-radius: 15px;
+    background: #ACACAC;
+    cursor: pointer;
+  }
+
+/* portfolio form */
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portfolio-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
+  overflow: hidden;
+}
+
+.portfolio-input {
+  align-self: flex-end;
+}
+
+.portfolio-sub {
+  align-self: flex-end;
+}

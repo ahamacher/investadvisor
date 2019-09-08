@@ -21,9 +21,12 @@ function RiskFactor(props) {
 
   return(
     <div className="slide-container">
-      <h4 className="risk-title">{AppContent.risk} : {risk}</h4>
+      <h4 className="risk-title text-main">{AppContent.risk} : <span 
+        className="risk-count">
+        {risk}
+        </span>
+      </h4>
       <input 
-        id="risk-slide"
         type="range" 
         min="0" max="10" 
         value={risk} 
