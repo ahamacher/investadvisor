@@ -1,43 +1,36 @@
 import { connect } from "react-redux";
 import React from "react";
 import { receiveRisk } from "../actions/riskActions";
+import AppContent from "../constants/textConstants";
 
 const mapStateToProps = (state) => ({
-  risk: state.user.riskprofile,
-  investment: state.investment
+  risk: state.user.riskprofile
 });
 
 const mapDispatchToProps = dispatch => ({
   receiveRisk: risk => dispatch(receiveRisk(risk))
 })
 
-class RiskFactor extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      value: 0
-    }
-  }
-
-  handleChange = e => {
-    const { receiveRisk } = this.props;
-    this.setState({value: e.target.value});
+function RiskFactor(props) {
+  const handleChange = e => {
+    const { receiveRisk } = props;
     receiveRisk(e.target.value);
   }
 
-  render(){
-    return(
-      <div className="slide-container">
-        <input 
-          id="risk-slide"
-          type="range" 
-          min="0" max="10" 
-          value={this.state.value} 
-          onChange={this.handleChange}
-          step="1"/>
-      </div>
-    );
-  }
+  const { risk } = props;
+
+  return(
+    <div className="slide-container">
+      <h4 className="risk-title">{AppContent.risk} : {risk}</h4>
+      <input 
+        id="risk-slide"
+        type="range" 
+        min="0" max="10" 
+        value={risk} 
+        onChange={handleChange}
+        step="1"/>
+    </div>
+  );
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(RiskFactor);
