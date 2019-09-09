@@ -4,13 +4,14 @@ const AppContent = {
     title: "Already have a portfolio?",
     profileSub: "Amount in USD invested",
     placeholder: "$0",
-    error: "Must enter a valid number"
+    error: "Must enter a valid number",
+    submit: "Submit"
   },
   risk: "Risk Profile Number",
   investments: {
     stock: "Stocks",
     bond: "Bonds",
-    gold: "Gold",
+    gold: "Options",
     cash: "Cash",
     realEstate: "Real Estate"
   },

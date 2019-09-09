@@ -4,7 +4,7 @@ const appColors = {
     interact: "#03a9f4",
     hover: "#259bd0",
     secondary: "#757575",
-    lighter: "#ACACAC"
+    lighter: "#ACACAC",
     dark: "#353535",
     border: "#3597ff"
   },

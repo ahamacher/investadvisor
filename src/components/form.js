@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React, { Component } from 'react'
-import { receiveRisk } from '../actions/riskActions'
+import { submitProfile } from '../actions/formActions'
 import AppContent from '../constants/textConstants'
 
 const mapStateToProps = state => ({
@@ -8,7 +8,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  receiveRisk: risk => dispatch(receiveRisk(risk))
+  submitProfile: payload => dispatch(submitProfile(payload))
 })
 
 class PortfolioForm extends Component {
@@ -25,6 +25,7 @@ class PortfolioForm extends Component {
     }
     this.toggle = this.toggle.bind(this);
     this.isValid = this.isValid.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
    
   toggle() {
@@ -58,6 +59,22 @@ class PortfolioForm extends Component {
     return e => this.setUpdate(field, e);
   }
 
+  handleSubmit(){
+    const { stock, bond, gold, cash, realEstate, valid } = this.state;
+    const { submitProfile } = this.props;
+    if (!valid) {
+      return;
+    }
+    const payload = {
+      stock,
+      bond,
+      gold,
+      cash,
+      realEstate
+    }
+    submitProfile(payload);
+  }
+
   inputField(field){
     return(
       <div className="form-item-container">
@@ -74,7 +91,7 @@ class PortfolioForm extends Component {
 
   formError(){
     return (
-      <p>{AppContent.profile.error}</p>
+      <p className="input-err">{AppContent.profile.error}</p>
     )
   }
 
@@ -82,12 +99,13 @@ class PortfolioForm extends Component {
     return(
       <form className="portfolio-form text-main">
         {this.state.valid ? "" : this.formError()}
+        <p className="input-head">{AppContent.profile.profileSub}</p>
         {this.inputField("stock")}
         {this.inputField("bond")}
         {this.inputField("gold")}
         {this.inputField("cash")}
         {this.inputField("realEstate")}
-        <input type="submit" onClick={this.handleSubmit} className="portfolio-sub"/>
+        <div onClick={this.handleSubmit} className="portfolio-sub">{AppContent.profile.submit}</div>
       </form>
     );
   }
@@ -96,7 +114,7 @@ class PortfolioForm extends Component {
     const { active } = this.state;
     return (
       <div className='portfolio-container'>
-        <h4 onClick={this.toggle} className="text-main">
+        <h4 onClick={this.toggle} className="text-main dropdown">
           {active ? "-" : "+"} {AppContent.profile.title}
         </h4>
         {active ? this.form() : ""}
