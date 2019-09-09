@@ -64,15 +64,17 @@ class PortfolioForm extends Component {
     const { submitProfile } = this.props;
     if (!valid) {
       return;
+    } else {
+      const payload = {
+        stock,
+        bond,
+        gold,
+        cash,
+        realEstate
+      }
+      submitProfile(payload);
     }
-    const payload = {
-      stock,
-      bond,
-      gold,
-      cash,
-      realEstate
-    }
-    submitProfile(payload);
+    
   }
 
   inputField(field){

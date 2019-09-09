@@ -186,5 +186,29 @@ output, ruby, section, summary, time, mark, audio, video {
 /* graph css */
 .graph-container {
   max-width: 80vw;
-  margin-left: 10vw;
+  margin: 0 auto;
+}
+
+/* investment info */
+.color-swatch {
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+}
+
+.investment-item {
+  margin: 2px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.left-investment {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.investment-list {
+  width: 200px;
+  margin: 0 auto;
 }

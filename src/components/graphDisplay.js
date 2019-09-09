@@ -13,26 +13,24 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
 })
 
-class CustomLabel extends React.Component {
-  render () {
-    return (
-      <g>
-        <VictoryLabel {...this.props} />
-        <VictoryTooltip
-          {...this.props}
-          x={200}
-          y={250}
-          orientation='top'
-          pointerLength={0}
-          cornerRadius={50}
-          flyoutWidth={100}
-          flyoutHeight={100}
-          flyoutStyle={{ fill: appColors.app.secondary, stroke: "none" }}
-          style={{ fill: "white", fontSize: "18px" }}
-        />
-      </g>
-    )
-  }
+function CustomLabel(props) {
+  return (
+    <g>
+      <VictoryLabel {...props} />
+      <VictoryTooltip
+        {...props}
+        x={200}
+        y={250}
+        orientation='top'
+        pointerLength={0}
+        cornerRadius={50}
+        flyoutWidth={100}
+        flyoutHeight={100}
+        flyoutStyle={{ fill: appColors.app.secondary, stroke: "none" }}
+        style={{ fill: "white", fontSize: "18px" }}
+      />
+    </g>
+  )
 }
 
 CustomLabel.defaultEvents = VictoryTooltip.defaultEvents

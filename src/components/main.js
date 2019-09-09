@@ -3,6 +3,8 @@ import AppContent from "../constants/textConstants";
 import RiskFactor from "./riskFactor";
 import PortfolioForm from "./form";
 import InvestGraph from "./graphDisplay";
+import Investment from "./investment";
+import MoveInvest from "./moveInvest";
 
 const Main = () => (
   <>
@@ -12,6 +14,8 @@ const Main = () => (
       <PortfolioForm />
       <RiskFactor />
       <InvestGraph />
+      <Investment />
+      <MoveInvest />
   </>
 )
 
