@@ -40,7 +40,6 @@ output, ruby, section, summary, time, mark, audio, video {
   color: white;
 }
 
-
 /* Styling for the risk factor component */
   .slide-container {
     display: flex;
@@ -64,9 +63,11 @@ output, ruby, section, summary, time, mark, audio, video {
     margin: 10px 0;
     width: 60vw;
   }
+
   input[type=range]:focus {
     outline: none;
   }
+
   input[type=range]::-webkit-slider-runnable-track {
     width: 100%;
     height: 10px;
@@ -77,6 +78,7 @@ output, ruby, section, summary, time, mark, audio, video {
     border-radius: 5px;
     border: 1px solid #000000;
   }
+
   input[type=range]::-webkit-slider-thumb {
     box-shadow: 1px 1px 3px rgba(0,0,0,.5);
     border: 1px solid #000000;
@@ -92,9 +94,11 @@ output, ruby, section, summary, time, mark, audio, video {
   input[type=range]::-webkit-slider-thumb:hover {
     background: #259bd0;
   }
+
   input[type=range]:focus::-webkit-slider-runnable-track {
     background: #ACACAC;
   }
+
   input[type=range]::-moz-range-track {
     width: 100%;
     height: 10px;
@@ -105,6 +109,7 @@ output, ruby, section, summary, time, mark, audio, video {
     border-radius: 5px;
     border: 1px solid #000000;
   }
+
   input[type=range]::-moz-range-thumb {
     box-shadow: 1px 1px 3px rgba(0,0,0,.5);
     border: 1px solid #000000;
@@ -186,6 +191,9 @@ output, ruby, section, summary, time, mark, audio, video {
 /* graph css */
 .graph-container {
   max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -193,7 +201,7 @@ output, ruby, section, summary, time, mark, audio, video {
 .color-swatch {
   width: 18px;
   height: 18px;
-  margin-right: 4px;
+  margin: 0 4px;
 }
 
 .investment-item {
@@ -211,4 +219,90 @@ output, ruby, section, summary, time, mark, audio, video {
 .investment-list {
   width: 200px;
   margin: 0 auto;
+}
+
+/* move investment pane */
+.move-pane {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.investment-move {
+  list-style: none;
+  margin: 0 0 0 10px;
+}
+
+.move-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+  align-self: flex-start;
+}
+
+.move-item {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2px 0;
+}
+
+@media screen and (min-width: 800px) {
+  .graph-container {
+    position: absolute;
+    right: 5vw;
+    top: 10vh;
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 500px;
+  }
+  .portfolio-container {
+    position: absolute;
+    width: 205px;
+    top: 135px;
+    margin-left: 5vw;
+  }
+  .slide-container {
+    position: absolute;
+    max-width: 350px;
+    margin-left: 5vw;
+  }
+  input[type=range] {
+    max-width: 350px;
+  }
+  .investment-list {
+    position: absolute;
+    top: 325px;
+    margin: 0;
+    margin-left: 5vw;
+    float: left;
+  }
+  .move-pane {
+    position: absolute;
+    top: 445px;
+    margin: 0;
+    margin-left: 5vw;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .graph-container {
+    width: 850px;
+    height: 850px;
+    max-width: 850px;
+    max-height: 850px;
+    position: absolute;
+    top: 0;
+  }
+  .portfolio-container {
+    top: 175px;
+  }
+  .investment-list {
+    top: 395px;
+  }
+  .move-pane {
+    top: 550px;
+  }
 }

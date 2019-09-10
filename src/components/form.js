@@ -61,16 +61,24 @@ class PortfolioForm extends Component {
 
   handleSubmit(){
     const { stock, bond, gold, cash, realEstate, valid } = this.state;
+    const stateArr = [stock, bond, gold, cash, realEstate];
     const { submitProfile } = this.props;
     if (!valid) {
       return;
     } else {
+      // this solves a blank input issue
+      for (let i = 0; i < stateArr.length; i++) {
+        const ele = stateArr[i];
+        if (ele === "") {
+          stateArr[i] = "0";
+        };
+      }
       const payload = {
-        stock,
-        bond,
-        gold,
-        cash,
-        realEstate
+        stock: stateArr[0],
+        bond: stateArr[1],
+        gold: stateArr[2],
+        cash: stateArr[3],
+        realEstate: stateArr[4]
       }
       submitProfile(payload);
     }

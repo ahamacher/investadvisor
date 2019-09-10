@@ -32,8 +32,8 @@ function Investment(props) {
       <ul className="investment-list">
         {lineItem("stock")}
         {lineItem("bond")}
-        {lineItem("cash")}
         {lineItem("gold")}
+        {lineItem("cash")}
         {lineItem("realEstate")}
       </ul>
   );

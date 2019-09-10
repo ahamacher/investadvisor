@@ -19,7 +19,9 @@ const AppContent = {
     title: "To create a balanced Portfolio",
     current: "Current Investment %",
     balance: "Balanced Investment %",
-    move: "move"
+    move: "Move",
+    from: "from",
+    to: "to"
   }
 };
 
